@@ -1,15 +1,16 @@
 import { DataSource } from "typeorm";
 import * as SQLite from "expo-sqlite";
 
-import { User } from "./User.entity";
+import { Usuarios } from "./Usuarios";
 
 export const AppDataSource = new DataSource({
   type: "expo",
   driver: SQLite,
   database: "db",
-  entities: [User],
+  entities: [Usuarios],
   synchronize: true,
   dropSchema: true,
+  logging: true,
 });
 
-export const connect = AppDataSource.initialize();
+export const initialize = AppDataSource.initialize();
