@@ -68,7 +68,7 @@ export default function App() {
 
       {/* OUTPUT */}
       <FlatList
-        style={{ padding: 10 }}
+        style={{ paddingHorizontal: 10, paddingBottom: 10 }}
         data={users}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Text>{item.nome}</Text>}
