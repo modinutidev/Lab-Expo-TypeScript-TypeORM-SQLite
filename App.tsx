@@ -6,6 +6,7 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 
 import "reflect-metadata";
@@ -18,6 +19,7 @@ export default function App() {
 
   useEffect(() => {
     // connectionTest();
+    selectUsers();
   }, []);
 
   // async function connectionTest() {
@@ -44,9 +46,13 @@ export default function App() {
   }
 
   async function actionButton() {
-    await insertUser();
-    await selectUsers();
-    setNome("");
+    if (nome.length > 0) {
+      await insertUser();
+      await selectUsers();
+      setNome("");
+    } else {
+      Alert.alert("Atenção!", "Para adicionar é necessário informar um nome.");
+    }
   }
 
   return (

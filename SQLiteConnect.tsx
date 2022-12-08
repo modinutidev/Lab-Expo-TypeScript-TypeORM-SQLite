@@ -8,8 +8,7 @@ export const AppDataSource = new DataSource({
   driver: SQLite,
   database: "db",
   entities: [Usuarios],
-  synchronize: true,
-  dropSchema: true,
+  dropSchema: false,
   logging: true,
 });
 
